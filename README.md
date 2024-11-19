@@ -4,13 +4,13 @@
 
 <div align="center">
   <p>
-  A Lightweight, Feature-Rich, and Production-Ready Remix Stack for your next SaaS application.
+  A Lightweight, Feature-Rich, and Production-Ready Remix Stack for your next SaaS application on Railway.
   </p>
 </div>
 
 <div align="center">
   <p>
-    <a href="https://remix-saas.fly.dev">Live Demo</a>
+    <a href="https://remix-saas-production.up.railway.app">Live Demo</a>
     ·
     <a href="https://github.com/dev-xo/remix-saas/tree/main/docs">Documentation</a>
     ·
@@ -22,11 +22,11 @@
 npx create-remix-saas@latest
 ```
 
-## [Live Demo](https://remix-saas.fly.dev)
+## [Live Demo](https://remix-saas-production.up.railway.app)
 
-[![Remix SaaS](https://raw.githubusercontent.com/dev-xo/dev-xo/main/remix-saas/intro.png)](https://remix-saas.fly.dev)
+We've created a simple demo that displays all template-provided features. Deploy this stack on Railway with one click!
 
-We've created a simple demo that displays all template-provided features. Psst! Give the site a few seconds to load! _(It's running on a free tier!)_
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/Bw4Gck)
 
 > [!NOTE]
 > Remix SaaS is an Open Source Template that shares common bits of code with: [Indie Stack](https://github.com/remix-run/indie-stack), [Epic Stack](https://github.com/epicweb-dev/epic-stack), [Supa Stripe Stack](https://github.com/rphlmr/supa-stripe-stack), and some other amazing Open Source Remix resources. Check them out, please!
@@ -34,6 +34,7 @@ We've created a simple demo that displays all template-provided features. Psst! 
 ## Getting Started
 
 Please, read the [Getting Started Documentation](https://github.com/dev-xo/remix-saas/tree/main/docs#remix-saas-documentation) to successfully initialize your **Remix SaaS** Template.
+
 
 ## Support
 
