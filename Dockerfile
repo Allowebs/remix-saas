@@ -4,8 +4,6 @@
 ARG NODE_VERSION=20.11.0
 FROM node:${NODE_VERSION}-slim as base
 
-LABEL fly_launch_runtime="Remix/Prisma"
-
 # Remix/Prisma app lives here
 WORKDIR /app
 
@@ -39,26 +37,12 @@ RUN npm prune --omit=dev
 # Final stage for app image
 FROM base
 
-# Install packages needed for deployment
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y openssl sqlite3 && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
-
 # Copy built application
 COPY --from=build /app /app
 COPY --from=build /app/node_modules/prisma /app/node_modules/prisma
-
-# Setup sqlite3 on a separate volume
-RUN mkdir -p /data
-VOLUME /data
-
-# add shortcut for connecting to database CLI
-RUN echo "#!/bin/sh\nset -x\nsqlite3 \$DATABASE_URL" > /usr/local/bin/database-cli && chmod +x /usr/local/bin/database-cli
 
 # Entrypoint prepares the database.
 ENTRYPOINT [ "/app/docker-entrypoint.js" ]
 
 # Start the server by default, this can be overwritten at runtime
-EXPOSE 3000
-ENV DATABASE_URL="file:///data/sqlite.db"
 CMD [ "npm", "run", "start" ]
