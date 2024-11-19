@@ -49,5 +49,6 @@ COPY --from=build /app/node_modules/prisma /app/node_modules/prisma
 # Entrypoint prepares the database.
 ENTRYPOINT [ "/app/docker-entrypoint.js" ]
 
+
 # Start the server by default, this can be overwritten at runtime
 CMD [ "npm", "run", "start" ]
